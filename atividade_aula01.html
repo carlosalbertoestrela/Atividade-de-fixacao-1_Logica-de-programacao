@@ -9,15 +9,21 @@
 </head>
 
 <body>
+
     <h1>Atividades de fixação - Aula 1</h1>
+
     <div id="at1_container">
+
         <h2>Exercício 1:</h2>
         <p>Digite as 4 notas para calcular a média</p>
+
         <input type="text" name="nota1" id="nota1">
         <input type="text" name="nota2" id="nota2">
         <input type="text" name="nota3" id="nota3">
         <input type="text" name="nota4" id="nota4">
+
         <button onclick="q1()">Calcular</button>
+
         <div class="at1">
             <hr>
         </div>
@@ -25,8 +31,10 @@
     </div>
 
     <div id="at2_container">
+
         <h2>Exercício 2:</h2>
         <p>Digite o raio em <i>cm</i> de um circulo para calcular sua área:</p>
+
         <input type="text" name="raio" id="raio">
         <button onclick="q2()">Calcular</button>
 
@@ -37,25 +45,34 @@
     </div>
 
     <div id="at3_container">
+
         <h2>Exercício 3:</h2>
         <p>Digite a temperatua em ℉ para converção em ℃ </p>
+
         <input type="text" name="tempf" id="tempf">
         <button onclick="q3()">Converter</button>
 
         <div class="at3">
             <hr>
         </div>
+
     </div>
 
     <div id="at4_container">
+
         <h2>Exercício 4:</h2>
         <p>Digite a ALTURA e a LARGURA da sala em Metros:</p>
+
         <label for="alt">Altula:</label>
         <input type="text" name="alt" id="alt">
+
         <br>
+
         <label for="larg">Largura: </label>
         <input type="text" name="larg" id="larg">
+
         <br>
+
         <button onclick="q4()">Calcular</button>
 
         <div class="at4">
@@ -64,14 +81,20 @@
     </div>
 
     <div id="at5_container">
+
         <h2>Exercício 5:</h2>
         <p>Digite a ALTURA e a LARGURA da cozinha em Metros:</p>
+
         <label for="alt2">Altula:</label>
         <input type="text" name="alt2" id="alt2">
+
         <br>
+
         <label for="larg2">Largura: </label>
         <input type="text" name="larg2" id="larg2">
+
         <br>
+
         <button onclick="q5()">Calcular</button>
 
         <div class="at5"><hr></div>
@@ -79,6 +102,7 @@
     </div>
 
     <script>
+
         let at1 = document.querySelector(".at1");
         let at2 = document.querySelector(".at2");
         let at3 = document.querySelector(".at3");
@@ -95,11 +119,10 @@
             n3 = parseFloat(n3.value);
             let n4 = document.querySelector("#nota4");
             n4 = parseFloat(n4.value);
-
-
-
             let media = (n1 + n2 + n3 + n4) / 4;
+
             at1.innerHTML = " <p><strong> A média das notas " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + " é " + media + " pontos</strong></p><hr>";
+
         }
 
         function q2() {
@@ -107,7 +130,9 @@
             let raio = document.querySelector("#raio");
             raio = raio.value;
             let area = (raio ** 2) * 3.14;
+
             at2.innerHTML = " <p><strong>A área de um circulo de raio " + raio + " cm é " + area + " cm</strong></p><hr>";
+
         }
 
         function q3() {
@@ -117,6 +142,7 @@
             let tempC = 5 * ((tempf - 32) / 9);
 
             at3.innerHTML = "<p><strong>" +tempf+" ℉ é equivalente a = " + tempC.toFixed(2) + "℃ </strong></p><hr>";
+
         }
 
         function q4() {
@@ -139,10 +165,15 @@
             let larg2 = document.querySelector("#larg2");
             larg2 = larg2.value;
             let area2 = larg2 * alt2;
-            let qAzulejos = area2 / 2.5;
+            let qAzulejos;
+            if(area2 <= 2.5){
+                qAzulejos = 1;
+            }
+            else{
+                qAzulejos = area2 / 2.5;
+            }
 
-            at5.innerHTML = " <p><strong>Para cobri a área de " + area2 + "m² serão necessárias " + qAzulejos.toFixed(1) + " cixas de azulejos.</strong></p><hr>";
-
+            at5.innerHTML = " <p><strong>Para cobrir uma área de " + area2 + "m² serão necessárias " + qAzulejos.toFixed(1) + " cixas de azulejos.</strong></p><hr>";
 
         }
 
